@@ -1,0 +1,8 @@
+### GET con query parameters
+GET http://localhost:8000/items/?q=algo&q=mas
+
+### GET con query parameters
+GET http://localhost:8000/items/?item-query=algo&item-query=mas
+
+### GET con query parameters
+GET http://localhost:8000/items/?limit=3&offset=2&order_by=updated_at

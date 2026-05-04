@@ -1,0 +1,27 @@
+### Create a user
+
+POST http://localhost:8000/users/
+Content-Type: application/json
+
+{
+  "id": "2",
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "is_active": true,
+  "age": 13
+}
+
+### Get user by ID
+GET http://localhost:8000/users/2
+
+### Update user
+PUT http://localhost:8000/users/1?q=additional_info
+Content-Type: application/json
+
+{
+  "id": "1",
+  "name": "Jane Doe",
+  "email": "jane.doe@example.com",
+  "is_active": false,
+  "age": 25
+}

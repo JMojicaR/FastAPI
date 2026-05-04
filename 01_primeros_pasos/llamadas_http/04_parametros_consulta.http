@@ -1,0 +1,8 @@
+### Request con parametros de consulta
+GET http://localhost:8000/cars/?limit=2&skip=1
+
+### Request con parametro de consulta opcional
+GET http://localhost:8000/cars/?optional=hello
+
+### Request con parametro de consulta opcional y otros parametros
+GET http://localhost:8000/cars/?optional=hello&limit=2&skip=1

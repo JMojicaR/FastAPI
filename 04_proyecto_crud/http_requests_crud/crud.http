@@ -1,0 +1,49 @@
+### Get All tasks
+GET http://localhost:8000/tareas/
+
+### Get All tasks with offset
+GET http://localhost:8000/tareas/?offset=2
+
+### Get All tasks with limit
+GET http://localhost:8000/tareas/?limit=10
+
+### Get All tasks with limit and offset
+GET http://localhost:8000/tareas/?limit=10&offset=2
+
+### Get task by state
+GET http://localhost:8000/tareas/?estado=completada
+
+### Get task by search
+GET http://localhost:8000/tareas/?search=leche
+
+### Get task by id
+GET http://localhost:8000/tareas/6
+
+### Create new task
+POST http://localhost:8000/tareas/
+Content-Type: application/json
+
+{
+    "titulo": "Programar",
+    "estado": "pendiente"
+}
+
+### Update task
+PUT http://localhost:8000/tareas/6
+Content-Type: application/json
+
+{
+    "titulo": "updated",
+    "estado": "pendiente"
+}
+
+### Patch a task
+PATCH http://localhost:8000/tareas/3
+Content-Type: application/json
+
+{
+    "titulo": "updated con patch"
+}
+
+### Delete a task
+DELETE http://localhost:8000/tareas/3

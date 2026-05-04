@@ -1,0 +1,10 @@
+###Query param validation
+
+GET http://localhost:8000/items/?q=1&q=tres&q=Hola
+
+###Path param validation
+GET http://localhost:8000/items/1?item-query=Hola
+
+###Validation for 03_query_model.py 
+GET http://127.0.0.1:8000/items/?limit=10&offset=5&order_by=created_at
+  

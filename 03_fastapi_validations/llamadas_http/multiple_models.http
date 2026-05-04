@@ -1,0 +1,36 @@
+### Send request with multiple models
+PUT http://localhost:8000/items/1
+
+{
+    "item":{
+        "name": "Item 1",
+        "description": "This is item 1",
+        "price": 10.5,
+        "tax": 0.5
+    },
+
+    "user":{
+        "username": "user1",
+        "full_name": "User One"
+    }
+}
+
+### Send request with missing fields
+
+PUT http://localhost:8000/items2/1
+Content-Type: application/json
+
+{
+    "item":{
+        "name": "Item 1",
+        "description": "This is item 1",
+        "price": 10.5,
+        "tax": 0.5
+    },
+
+    "user":{
+        "username": "user1",
+        "full_name": "User One"
+    },
+    "priority": 3
+}

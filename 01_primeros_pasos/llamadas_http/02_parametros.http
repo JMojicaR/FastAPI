@@ -1,0 +1,6 @@
+### Get favourite book
+GET http://localhost:8000/books/favorite
+
+### Get book by ID
+GET http://localhost:8000/books/1
+
