@@ -1,0 +1,19 @@
+### Post get token inactive user###
+POST http://localhost:8000/token
+Content-Type: application/x-www-form-urlencoded
+
+username=alice&password=password2
+
+### Get current user inactive ###
+GET http://localhost:8000/users/me
+Authorization: Bearer alice
+
+#### Post get token active user###
+POST http://localhost:8000/token
+Content-Type: application/x-www-form-urlencoded
+
+username=johndoe&password=password
+
+### Get current user active ###
+GET http://localhost:8000/users/me 
+Authorization: Bearer johndoe

@@ -63,6 +63,11 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid authentication credentials")
     return user
 
+async def get_current_active_user(current_user: Annotated[UserInDB, Depends(get_current_user)]):
+    if current_user.disabled:
+        raise HTTPException(status_code=400, detail="Inactive user")
+    return current_user
+
 @app.post("/token")
 async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
     user_dict = fake_users_db.get(form_data.username)
@@ -75,7 +80,7 @@ async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
     return {"access_token": user.username, "token_type": "bearer"}
 
 @app.get("/users/me")
-async def read_users_me(current_user: Annotated[User, Depends(get_current_user)]):
+async def read_users_me(current_user: Annotated[User, Depends(get_current_active_user)]):
     if current_user.disabled:
         raise HTTPException(status_code=400, detail="Inactive user")
     return current_user
