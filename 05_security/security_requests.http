@@ -17,3 +17,19 @@ username=johndoe&password=password
 ### Get current user active ###
 GET http://localhost:8000/users/me 
 Authorization: Bearer johndoe
+
+### JWT login (POST /token) ###
+POST http://localhost:8000/token
+Content-Type: application/x-www-form-urlencoded
+
+username=johndoe&password=secret
+
+#> {%
+#client.global.set("jwt_access_token", response.body.access_token);
+#%}
+
+
+### Current user (GET /users/me/) ###
+GET http://localhost:8000/users/me/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNzgwNzc3ODE4fQ.X_4_gWbYDzZtJZrKJhc-DCQmuws1Ew12KLbJd-wt_iY
+
