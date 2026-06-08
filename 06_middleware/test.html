@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test CORS</title>
+</head>
+<body>
+  <h1>Test CORS</h1>
+  <button onclick="getData()">Llamar API</button>
+  <pre id="output"></pre>
+
+  <script>
+    async function getData() {
+      try {
+        const response = await fetch("http://localhost:8000/", {
+          method: "GET",
+          credentials: "include", // si usas cookies o auth
+        });
+        const data = await response.json();
+        document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById("output").textContent = error;
+      }
+    }
+  </script>
+</body>
+</html>
