@@ -1,0 +1,58 @@
+@baseUrl = http://127.0.0.1:8000
+
+### Get all heroes (with pagination)
+GET {{baseUrl}}/heroes/?limit=5&offset=0
+
+### Get hero by ID
+GET {{baseUrl}}/heroes/2
+
+### Create a new hero
+POST {{baseUrl}}/heroes/
+Content-Type: application/json
+
+{
+  "name": "Spider-man",
+  "age": 24,
+  "secret_name": "Pedro Parqes",
+  "team_id": 1
+}
+
+### Update a hero
+PUT {{baseUrl}}/heroes/1
+Content-Type: application/json
+
+{
+  "name": "Spider-Boy Updated",
+  "age": 17,
+  "secret_name": "Pedro P."
+}
+
+### Delete a hero
+DELETE {{baseUrl}}/heroes/1
+
+### Get all teams
+GET {{baseUrl}}/teams/
+
+### Get team by ID
+GET {{baseUrl}}/teams/1
+
+### Create a new team
+POST {{baseUrl}}/teams/
+Content-Type: application/json
+
+{
+  "name": "Avengers",
+  "headquarters": "New York"
+}
+
+### Update a team
+PUT {{baseUrl}}/teams/1
+Content-Type: application/json
+
+{
+  "name": "New Avengers",
+  "headquarters": "Avengers Tower"
+}
+
+### Delete a team
+DELETE {{baseUrl}}/teams/1
